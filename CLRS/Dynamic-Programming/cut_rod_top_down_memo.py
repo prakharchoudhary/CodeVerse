@@ -33,6 +33,7 @@ def main():
 		l = [5, 10, 15, 20, 25]
 		for r in l:
 			arr = [random.randint(1, r) for i in range(r)]
+			print arr
 			start = time.time()
 			maxCost = memoized_cut_rod(arr, r)
 			end = time.time()
@@ -42,4 +43,5 @@ def main():
 			time.sleep(1)
 
 if __name__=='__main__':
+	random.seed(67)
 	main()
