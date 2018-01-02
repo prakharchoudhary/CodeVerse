@@ -59,7 +59,7 @@ class LinkedList:
             prev = Node()
             while p != pos - 1:
                 p += 1
-                prev = head
+                prev = self.head
                 self.head = self.head.next
             prev.next = self.head.next
             temp = self.head
