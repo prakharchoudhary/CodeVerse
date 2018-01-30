@@ -2,6 +2,8 @@
 
 using namespace std;
 
+bool isSubsetSum(int set[], int n, int sum);
+
 int main()
 {
 	int T, n, m, am, total;
@@ -15,7 +17,24 @@ int main()
 		for(int i=0; i<n; i++){
 			cin>>notes[i];
 		}
-		// apply 0-1 knapsack to find the suitable subset.
+		if(isSubsetSum(notes, n, m))
+			cout<<"Yes"<<endl;
+		else
+			cout<<"No"<<endl;
 	}
 	return 0;
+}
+
+bool isSubsetSum(int set[], int n, int sum)
+{
+   if (sum == 0)
+     return true;
+   if (n == 0 && sum != 0)
+     return false;
+ 
+   if (set[n-1] > sum)
+     return isSubsetSum(set, n-1, sum);
+ 
+   return isSubsetSum(set, n-1, sum) || 
+                        isSubsetSum(set, n-1, sum-set[n-1]);
 }
