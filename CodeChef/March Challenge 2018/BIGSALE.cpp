@@ -1,4 +1,5 @@
 #include<iostream>
+#include<iomanip>
 
 using namespace std;
 
@@ -19,6 +20,6 @@ int main()
 			discounted_price = inc_price - (inc_price)*(recipes[i][2]/100);
 			loss += (recipes[i][0] - discounted_price) * recipes[i][1];
 		}
-		cout<<loss<<endl;
+		cout << setprecision(8) << loss << endl;
 	}
 }

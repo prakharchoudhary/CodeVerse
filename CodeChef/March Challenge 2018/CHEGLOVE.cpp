@@ -35,7 +35,6 @@ int main(){
 		{
 			front[i] = sheath[i] - fingers[i];
 			back[i] = sheath[s-i-1] - fingers[i];
-			// cout<<front[i]<<"	|	"<<back[s]<<endl;
 		}
 		f = fit(front, s);
 		b = fit(back, s);
